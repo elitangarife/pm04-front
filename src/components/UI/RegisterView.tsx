@@ -5,6 +5,7 @@ import { validateSchemaRegister } from "@/utils/validate"
 import {ErrorMessage, Field, Form, Formik} from "formik"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import toast from "react-hot-toast"
 
 const RegisterView = () => {
     const router = useRouter();
@@ -18,10 +19,10 @@ const RegisterView = () => {
             const result = await register(values)
             if(result.success){
             resetForm()
-            alert("Usuario registrado con exito")
+            toast.success("Usuario registrado con exito")
             router.push("/login")
           }else {
-              alert(result.message);
+            toast.error(result.message);
             }
           
         }}

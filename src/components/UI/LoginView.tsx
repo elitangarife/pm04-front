@@ -5,6 +5,7 @@ import {ErrorMessage, Field, Form, Formik} from "formik"
 import { useRouter } from "next/navigation";
 import Link from "next/link"
 import { login } from "@/utils/auth.helper";
+import toast from "react-hot-toast";
 
 
 
@@ -27,10 +28,10 @@ const LoginView = () => {
             const { token, user } = response.data;
             setUserData({ token, user });
             resetForm();
-            alert("Usuario logueado con exito")
+            toast.success("Usuario logueado con exito")
             router.push("/");
           } else {
-            alert(response.message);
+            toast.error(response.message);
           }
         }}
         >

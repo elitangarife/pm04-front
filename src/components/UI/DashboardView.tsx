@@ -3,6 +3,7 @@ import React from 'react'
 import { useAuth } from '@/context/AuthContext'
 import Link from 'next/link'
 import { useRouter } from "next/navigation";
+import toast from 'react-hot-toast';
 
 const DashboardView = () => {
     const {userData, setUserData} = useAuth()
@@ -11,7 +12,7 @@ const DashboardView = () => {
     const logOutHandler = () => {
         setUserData(null);
         localStorage.clear();
-        alert("Sesión cerrada")
+        toast.success("Sesión cerrada")
         router.push("/")
         
       }

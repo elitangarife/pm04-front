@@ -1,3 +1,5 @@
+import toast from "react-hot-toast"
+
 const APIURL = process.env.NEXT_PUBLIC_API_URL
 
 export async function createOrder (token: string, products: number[]) {
@@ -11,11 +13,11 @@ export async function createOrder (token: string, products: number[]) {
               body: JSON.stringify({products})
         })
         if(response.ok){
-            alert("La compra fue realizada con exito")
-            alert("Tu pedido estará listo en 2 días")
+            toast.success("La compra fue realizada con exito")
+            toast.success("Tu pedido estará listo en 2 días")
             return response.json()
         }else {
-            alert("Fallo al realizar la compra. Intentelo de nuevo")
+            toast.error("Fallo al realizar la compra. Intentelo de nuevo")
             throw new Error ("Fallo del servidor")
         }
     } catch (error: any) {

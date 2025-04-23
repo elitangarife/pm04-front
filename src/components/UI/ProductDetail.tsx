@@ -4,6 +4,7 @@ import { useAuth } from '@/context/AuthContext'
 import { IProduct } from '@/utils'
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import toast from 'react-hot-toast'
 
 
 const ProductDetail: React.FC<IProduct> = ({id, name, image, description, stock, price, categoryId}) => {
@@ -12,7 +13,8 @@ const ProductDetail: React.FC<IProduct> = ({id, name, image, description, stock,
     
   const handleAddToCart = () =>  {  
     if(!userData?.token){
-        alert("Inicia sesión para comprar")
+      toast.error("Inicia sesión para comprar")
+        
         router.push("/login")
     }else{
       const cart: IProduct[] =JSON.parse(localStorage.getItem("cart") || "[]")
@@ -22,14 +24,14 @@ const ProductDetail: React.FC<IProduct> = ({id, name, image, description, stock,
       })
 
       if(productExist){
-        alert("Este producto ya se encuentra en el carrito")
+        toast.success("Este producto ya se encuentra en el carrito", {icon: '👏'})
         router.push("/cart")
       } else {
           cart.push({
               id, name, image, description, stock, price, categoryId
           })
       localStorage.setItem("cart", JSON.stringify(cart))
-      alert("El producto fue agregado al carrito")
+      toast.success("El producto fue agregado al carrito")
       router.push("/")
     }
   }

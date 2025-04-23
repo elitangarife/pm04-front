@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
+import toast from 'react-hot-toast'
 
 const SearchBarView = () => {
     const [searchQuery, setSearchQuery] = useState('')
@@ -12,7 +13,7 @@ const SearchBarView = () => {
         if (searchQuery.length){
             router.push(`/products/${searchQuery}`)
         }else {
-            alert("Nothing to search")
+            toast.success("No hay nada para buscar")
         }
         setSearchQuery("")
     }
