@@ -33,15 +33,15 @@ const Footer = () => {
                     <h4 className='font-bold text-center'>Síguenos</h4>
                     <div className="mt-4 flex justify-center space-x-6">
                         <a  href="https://facebook.com/">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="Facebook" className='w-6 h-6'/>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="Facebook" className='w-6 h-6 hover:scale-110'/>
                         </a>
 
-                        <a href="https://instagram.com/">
-                            <img src="https://images.vexels.com/media/users/3/137380/isolated/lists/1b2ca367caa7eff8b45c09ec09b44c16-logotipo-de-icono-de-instagram.png" alt="Instagram" className='w-6 h-6'/>
+                        <a className='aria-label' href="https://instagram.com/">
+                            <img src="https://images.vexels.com/media/users/3/137380/isolated/lists/1b2ca367caa7eff8b45c09ec09b44c16-logotipo-de-icono-de-instagram.png" alt="Instagram" className='w-6 h-6 hover:scale-110'/>
                         </a>
 
                         <a href="https://twitter.com/" >
-                            <img src="https://img.freepik.com/vector-premium/vector-logotipo-aplicacion-x-twitter_798572-316.jpg?semt=ais_hybrid&w=740" alt="Twitter" className='w-6 h-6'/>
+                            <img src="https://img.freepik.com/vector-premium/vector-logotipo-aplicacion-x-twitter_798572-316.jpg?semt=ais_hybrid&w=740" alt="Twitter" className='w-6 h-6 hover:scale-110'/>
                         </a>
                     </div>
               </div>

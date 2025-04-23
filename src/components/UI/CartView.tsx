@@ -57,7 +57,7 @@ const CartView = () => {
         <div className="p-4 md:min-h-screen ">
             <div className="relative m-2 ">
                 <h1 className="text-center text-2xl font-bold ">🛒 Carrito de compras</h1>
-                <Link href={"/"} className="inline-block mt-2 md:absolute md:right-0 md:top-0 md:mt-0 py-2 px-3 rounded-xl font-medium transition-colors duration-200 bg-gray-200 text-gray-900 hover:bg-gray-300">Agregar productos</Link>
+                <Link href={"/"} className="inline-block mt-2 md:absolute md:right-0 md:top-0 md:mt-0 py-2 px-3 rounded-xl font-medium transition-colors duration-200 bg-gray-200 text-gray-900 hover:bg-gray-300">Agregar más productos</Link>
                 
             </div>
     
@@ -84,7 +84,7 @@ const CartView = () => {
                           </div>
                           
                     </div>
-                  <button onClick={() => removeFromCart(product.id)} className="py-2 px-2 rounded-xl font-medium transition-colors duration-200 w-30 bg-gray-200 text-gray-900 hover:bg-gray-300 gap-48" >Eliminar</button>
+                  <button onClick={() => removeFromCart(product.id)} className="py-2 px-2 rounded-xl font-medium transition-colors duration-200 w-30 bg-red-100 text-red-600 hover:bg-red-200 gap-48" >Eliminar</button>
                     
                     
                   </div>
@@ -119,7 +119,7 @@ const CartView = () => {
               
     
               {cart.length > 0 && (
-                <button onClick={handleCheckout} className="py-2 px-2 rounded-xl font-medium transition-colors duration-200 w-30 bg-blue-300 text-white hover:bg-blue-400 p-2 mt-4">Adquirir</button>
+                <button onClick={handleCheckout} className="py-2 px-2 rounded-xl font-medium transition-colors duration-200 w-30 bg-blue-300 text-white hover:bg-blue-400 p-2 mt-4">💳Adquirir</button>
               )}
             </div>
           </div>

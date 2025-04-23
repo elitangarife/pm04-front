@@ -32,9 +32,9 @@ const OrdersView = () => {
                 return (
                     <div key={order.id} className=" outline-2 outline-gray-600 m-2 p-4 rounded-md border-b py-2 items-center sm:h-auto sm:w-auto ">
                         <p className="text-lg font-semibold text-gray-900 mb-4 text-center">Orden N°:  {order.id}</p>
+                        <p className="text-lg font-semibold text-gray-900 mb-4 flex justify-between">Estado de la orden:<span className="text-green-600 font-semibold"> {order.status}</span></p>
                         <p className="text-lg font-semibold text-gray-900 mb-4 flex justify-between">Día de compra: <span className="font-normal">{new Date(order.date).toLocaleDateString()}</span></p>
                         <p className="text-lg font-semibold text-gray-900 mb-4 flex justify-between">Hora de compra: <span className="font-normal">{new Date(order.date).toLocaleTimeString()}</span></p>
-                        <p className="text-lg font-semibold text-gray-900 mb-4 flex justify-between">Estado de la orden:<span className="font-normal"> {order.status}</span></p>
                         
                         <p className="text-lg font-semibold text-gray-900 mb-4">Productos comprados:</p>
 
