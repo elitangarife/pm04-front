@@ -17,7 +17,7 @@ const Navbar = () => {
                     <SearchBarView/>
                   </div>
 
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 text-sm sm:text-base md:text-lg">             
+              <div className="flex flex-row flex-wrap justify-center gap-x-4 gap-y-2 text-xs sm:text-base md:text-lg">             
                 
                   <Link className="text-gray-900 hover:text-gray-400" href="/">Home</Link>
 
