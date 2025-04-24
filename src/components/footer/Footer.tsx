@@ -7,8 +7,8 @@ const Footer = () => {
     
 
       <h2 className="text-center font-bold text-lg ">TuTiendaApple</h2>
-      <p className="text-center mt-2 ">Tu tienda online de productos Apple.</p>
-      <p className="text-center mt-2 mb-10">Compra online, envío rápido y seguro.</p>
+      <p className="text-center mt-2 ">Tu tienda en línea de productos Apple.</p>
+      <p className="text-center mt-2 mb-10">Compra en línea, envío rápido y seguro.</p>
 
       
     <div className='my-5 w-full mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -17,7 +17,7 @@ const Footer = () => {
                     <h4 className='font-bold text-center'>Enlaces rápidos</h4>
                     <div className='mt-4 space-y-2 text-center'>
                         <Link className='hover:text-gray-400 transition duration-300 ' href="/about" >Sobre nosotros</Link><br />
-                        <Link className='hover:text-gray-400 transition duration-300 ' href="/" >Home</Link>
+                        <Link className='hover:text-gray-400 transition duration-300 ' href="/" >Inicio</Link>
                     </div>
             </div>
 
@@ -47,7 +47,7 @@ const Footer = () => {
               </div>
 
     </div>
-      <p className='text-center'>&copy; 2025 MacStore. Todos los derechos reservados.</p>
+      <p className='text-center'>© 2025 TuTiendaApple. Todos los derechos reservados.</p>
 
     </>
   )

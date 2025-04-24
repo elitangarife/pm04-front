@@ -11,7 +11,10 @@ const RegisterView = () => {
     const router = useRouter();
   return (
     <div className="bg-white rounded-2xl shadow m-6 p-6 space-y-4">
-        <h1 className="text-center mt-5 font-bold text-4xl">Register</h1>
+
+        <h1 className="text-center mt-5 font-bold text-4xl">Crear una cuenta</h1>
+
+
         <Formik
         initialValues={{ email: '', password: '', name: '', address: '', phone: '' }}
         validationSchema={validateSchemaRegister}
@@ -22,7 +25,8 @@ const RegisterView = () => {
             toast.success("Usuario registrado con exito")
             router.push("/login")
           }else {
-            toast.error(result.message);
+            toast.error(result.message === "User already exists" ? "Este usuario ya existe" : result.message)
+            router.push("login")
             }
           
         }}
@@ -47,11 +51,11 @@ const RegisterView = () => {
                     <Field className="bg-gray-200 rounded-2xl pl-3 p-2 w-full" placeholder="Tu dirección" type="text" name="address" />
                     <ErrorMessage className="text-red-600 text-sm" name="address" component="div" />  
 
-                    <label className='uppercase font-bold '>Telefono: </label>
+                    <label className='uppercase font-bold '>Teléfono: </label>
                     <Field className="bg-gray-200 rounded-2xl pl-3 p-2 w-full" placeholder="123 456 78 90" type="text" name="phone" />
                     <ErrorMessage className="text-red-600 text-sm" name="phone" component="div" />  
 
-                    <button className='py-2 px-2 rounded-xl font-medium transition-colors duration-200 w-30 bg-blue-300 text-white hover:bg-blue-400'  type="submit" disabled={errors.email || errors.password || errors.name || errors.address || errors.phone ? true : false} >Submit</button>
+                    <button className='py-2 px-2 rounded-xl font-medium transition-colors duration-200 w-30 bg-blue-300 text-white hover:bg-blue-400'  type="submit" disabled={errors.email || errors.password || errors.name || errors.address || errors.phone ? true : false} >Enviar</button>
                     
                     <p>¿Ya tienes una cuenta? <Link href="/login">Inicia sesión</Link></p>
                 </div>

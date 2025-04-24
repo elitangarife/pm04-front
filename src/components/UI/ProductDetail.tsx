@@ -52,7 +52,7 @@ const ProductDetail: React.FC<IProduct> = ({id, name, image, description, stock,
 
                   <p className='text-sm'>{description}</p>
                   <p className='text-sm'>Precio: ${price}</p>
-                  <p className='text-sm'>Stock disponible: {stock}</p>
+                  <p className='text-sm'>Unidades disponibles: {stock}</p>
                   <button onClick={handleAddToCart} className="py-2 px-2 rounded-xl font-medium transition-colors duration-200 w-30 bg-blue-300 text-white hover:bg-blue-400" >Comprar</button>
               </div>
           </div>

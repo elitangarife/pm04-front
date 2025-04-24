@@ -19,7 +19,7 @@ const Navbar = () => {
 
               <div className="flex flex-row flex-wrap justify-center gap-x-4 gap-y-2 text-xs sm:text-base md:text-lg">             
                 
-                  <Link className="text-gray-900 hover:text-gray-400" href="/">Home</Link>
+                  
 
 
                   {userData?.token ? (

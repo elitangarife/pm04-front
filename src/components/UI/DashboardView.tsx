@@ -36,9 +36,9 @@ const DashboardView = () => {
                             </div>               
                             <div className="cart-item  bg-gray-100 p-4 rounded-md shadow-md  space-y-4">
                                 <h1 className="text-center text-2xl font-bold mb-5">Tus datos</h1>
-                                <p className="text-lg font-semibold text-gray-900 mb-4">📍Tu dirección de envio es:<span className="font-normal"> {userData?.user.address}</span></p>
+                                <p className="text-lg font-semibold text-gray-900 mb-4">📍Tu dirección de envío es:<span className="font-normal"> {userData?.user.address}</span></p>
                                 <p className="text-lg font-semibold text-gray-900 mb-4">📧Tu email es: <span className="font-normal">{userData?.user.email}</span></p>
-                                <p className="text-lg font-semibold text-gray-900 mb-4">📞Tu telefono es: <span className="font-normal">{userData?.user.phone}</span></p>
+                                <p className="text-lg font-semibold text-gray-900 mb-4">📞Tu teléfono es: <span className="font-normal">{userData?.user.phone}</span></p>
 
                             </div>
                 </div> 

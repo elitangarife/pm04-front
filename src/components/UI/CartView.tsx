@@ -47,9 +47,11 @@ const CartView = () => {
     }
   }
 
-  const subtotal = totalCart > 0 ? (totalCart) / 1.21 : 0;
-  const taxes = totalCart > 0 ? subtotal * 0.21 : 0;
+  const subtotal = totalCart > 0 ? (totalCart) / 1.19 : 0;
+  const taxes = totalCart > 0 ? subtotal * 0.19 : 0;
   const total = totalCart > 0 ? totalCart : 0;
+  const roundedSubtotal = Math.round(subtotal)
+  const roundedTaxes = Math.round(taxes)
 
 
   return (
@@ -76,7 +78,7 @@ const CartView = () => {
                           <div className='xl:flex flex-col items-left justify-center space-x-4'>
                               <p className="text-lg font-semibold text-gray-900 mb-4">{product.name}</p>
 
-                              <p className="text-lg font-semibold text-gray-900 mb-4">Precio unitario: ${product.price}</p>
+                              <p className="text-lg font-semibold text-gray-900 mb-4">${product.price}</p>
                           </div>
     
                           <div className='max-w-xs overflow-hidden m-auto flex justify-center'>
@@ -98,7 +100,7 @@ const CartView = () => {
     
               <div className="mb-2 flex justify-between">
                 <p className="text-lg font-semibold text-gray-900 mb-4">Subtotal:</p>
-                <span >${subtotal.toFixed(2)}</span>
+                <span >${roundedSubtotal}</span>
               </div>
 
               <div className="mb-2 flex justify-between">
@@ -107,14 +109,14 @@ const CartView = () => {
               </div>
     
               <div className="mb-2 flex justify-between">
-                <p className="text-lg font-semibold text-gray-900 mb-4">Impuestos (21%):</p>
-                <span>${taxes.toFixed(2)}</span>
+                <p className="text-lg font-semibold text-gray-900 mb-4">Impuestos (19%):</p>
+                <span>${roundedTaxes}</span>
               </div>
 
               <br />
               <div className="mb-2 flex justify-between font-bold border-t pt-2">
                 <p>Total:</p>
-                <span>${totalCart}</span>
+                <span>${total}</span>
               </div>
               
     

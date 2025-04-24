@@ -1,7 +1,7 @@
 import {IProduct} from "../../utils/index";
 import Link from "next/link";
 
-const Card: React.FC <IProduct> = ({id, name, price,image}) => {
+const Card: React.FC <IProduct> = ({id, name, price,image, description}) => {
 
   return (
     <div className="flex justify-center text-center w-full p-4 sm:w-72 md:w-80 lg:w-96">
@@ -15,7 +15,8 @@ const Card: React.FC <IProduct> = ({id, name, price,image}) => {
 
                 <p className="text-sm text-gray-500">Codigo del producto: {id}</p>
                 
-              {price &&<p className="text-sm text-gray-600">$ {price}</p>}           
+              {price &&<p className="text-sm text-gray-600">$ {price}</p>}
+              
    
             <Link href={`/product/${id}`} className="py-2 px-2 rounded-xl font-medium transition-colors duration-200 w-30 bg-gray-200 text-gray-900 hover:bg-gray-300" >Ver detalles</Link>
 
