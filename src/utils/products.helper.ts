@@ -38,10 +38,10 @@ export async function getProductsByCategoryOrName (categoryIdOrName: string) {
     try {
         const data = await fetchProducts()
 
-        // const categoryId = categoriesToPreLoad.find((category) => category.name.toLocaleLowerCase().includes(categoryIdOrName.toLocaleLowerCase()))
+        //Filtro searchbar por nombre
+        let productFiltered = data.filter((product) => product.name.toString() === categoryIdOrName)
 
-        let productFiltered = data.filter((product) => product.categoryId.toString() === categoryIdOrName)
-
+        //Filtro subnavbar por categoriaId
         if(!productFiltered.length){
             productFiltered = data.filter((product) => product.name.toLocaleLowerCase().includes(categoryIdOrName.toLocaleLowerCase()))
 

@@ -26,9 +26,10 @@ const OrdersView = () => {
 
   return (
     <div className="flex-grow flex flex-col">
-        <h1 className="text-center text-3xl font-bold mt-5 ">Mis compras</h1>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 p-4 border-gray-200 m-5 border-2 bg-gray-100 rounded-md shadow-md flex-grow">
+        <h1 className="text-center text-3xl font-bold mt-5 ">Mis compras </h1>
 
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-4 p-4 border-gray-200 m-5 border-2 bg-gray-100 rounded-md shadow-md flex-grow">
+            
             {orders.length ?
             orders.map((order) => {
                 

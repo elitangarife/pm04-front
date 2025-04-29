@@ -8,12 +8,6 @@ export const validateSchemaLogin = Yup.object({
   
   password: Yup.string()
     .required('La contraseña es obligatoria')
-    .min(6, 'La contraseña debe tener al menos 6 caracteres')
-    .max(20, 'La contraseña no puede tener más de 20 caracteres')
-    .matches(
-      /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,20}$/,
-      'La contraseña debe tener al menos una letra y un número'
-    ),
 });
 
 export const validateSchemaRegister = Yup.object({
