@@ -1,5 +1,6 @@
 import { ICategory } from "@/utils";
 
+//precarga de categorias
 const categoriesToPreLoad: ICategory[] = [
         { name: 'Celulares', id:1 },
         { name: 'Portátiles', id: 2 },
