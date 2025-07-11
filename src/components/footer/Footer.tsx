@@ -5,6 +5,7 @@ const Footer = () => {
   return (
     <>
     
+    <div className='mt-10 bg-gray-100 p-6 rounded-lg shadow-lg'>
 
       <h2 className="text-center font-bold text-lg ">TuTiendaApple</h2>
       <p className="text-center mt-2 ">Tu tienda en línea de productos Apple.</p>
@@ -49,6 +50,7 @@ const Footer = () => {
     </div>
       <p className='text-center'>© 2025 TuTiendaApple. Todos los derechos reservados.</p>
 
+    </div>
     </>
   )
 }

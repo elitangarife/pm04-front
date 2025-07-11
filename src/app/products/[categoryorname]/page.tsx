@@ -21,10 +21,9 @@ const CategoryIdOrName = async ({ params }: { params: Promise< { categoryorname:
 
   return (
     <div className='min-h-screen m-auto'>
-        <p className="text-center text-3xl font-bold p-4 m-2 mb-4">Resultados de tu busqueda</p>
-        <p className="text-center text-3xl m-2 mb-4font-normal">{displayName}</p>
+        <p className="text-center text-2xl font-bold mt-8">Resultados de tu búsqueda: <span className="text-3xl font-normal">{displayName}</span></p>
    
-            <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-3 lg:pl-10 '>
+            <div className='w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-16 p-3 lg:pl-10 '>
                 
                 {
                 products.length ?
@@ -38,7 +37,7 @@ const CategoryIdOrName = async ({ params }: { params: Promise< { categoryorname:
                     })) : (
                         <div className="col-span-full flex justify-center items-center mt-20">
                             <div className='bg-white rounded-2xl shadow p-6 flex justify-center items-center'>
-                                <p className=" text-center text-lg text-gray-900 font-semibold">No se encontraron productos con ese nombre</p>
+                                <p className=" text-center text-lg text-gray-900 font-semibold">No se encontraron productos</p>
                                 
                             </div>
                         </div>

@@ -1,19 +1,23 @@
+import products from "@/helpers/products"
 import { IProduct } from "."
 
 const APIURL = process.env.NEXT_PUBLIC_API_URL
 
-export async function fetchProducts (): Promise<IProduct[]> {
+const mockProducts = products
+
+
+export async function fetchProducts () {
     try {
         const data = await fetch(`${APIURL}/products`)
 
         if(!data.ok) {
-            return []
+            return mockProducts
         }
         const products: IProduct[] = await data.json()
         return products
 
     } catch (error: any) {
-        return []
+        return mockProducts
     }
 }
 
@@ -38,24 +42,28 @@ export async function fetchProductDetail (id:string): Promise<IProduct> {
 
 
 
-export async function getProductsByCategoryOrName (categoryIdOrName: string) {
-    try {
-        const data = await fetchProducts()
+export async function getProductsByCategoryOrName(categoryIdOrName: string) {
+  try {
+    const data = await fetchProducts()
 
-        //Filtro searchbar por nombre
-        let productFiltered = data.filter((product) => product.name.toString() === categoryIdOrName)
+    const isNumber = !isNaN(Number(categoryIdOrName))
+    let filteredProducts: IProduct[] = []
 
-        //Filtro subnavbar por categoriaId
-        if(!productFiltered.length){
-            productFiltered = data.filter((product) => product.name.toLocaleLowerCase().includes(categoryIdOrName.toLocaleLowerCase()))
-
-            if(!productFiltered.length){
-                productFiltered = []
-            }
-        }
-        return productFiltered
-    } catch (error: any) {
-        throw new Error(error)
-        
+    if (isNumber) {
+      
+      filteredProducts = data.filter(
+        (product) => product.categoryId.toString() === categoryIdOrName
+      )
+    } else {
+      
+      filteredProducts = data.filter((product) =>
+        product.name.toLowerCase().includes(categoryIdOrName.toLowerCase())
+      )
     }
+
+    return filteredProducts
+  } catch (error: any) {
+    throw new Error('Error al filtrar productos')
+  }
 }
+

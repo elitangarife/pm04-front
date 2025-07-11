@@ -37,28 +37,35 @@ const ProductDetail: React.FC<IProduct> = ({id, name, image, description, stock,
   }
   }
   
-  return (
-    <>
-      
-      <h1 className="text-center mt-5 font-bold text-2xl ">Detalle del producto</h1>
-          <div className="flex justify-center text-center w-full md:-1/2 space-y-4 mt-5">
+  return  (
+    <div className="max-w-3xl mx-auto px-4 py-8 m-4 mb-10">
+      <h1 className="text-center font-bold text-2xl mb-10">Detalle del producto</h1>
 
-              <div className="bg-white rounded-2xl shadow m-6 p-6 flex flex-col gap-4 items-center ">
+      <div className="bg-white rounded-2xl shadow p-6 flex flex-col md:flex-row items-center justify-center gap-6">
+        <div className="w-full md:w-1/2 flex justify-center">
+          <img
+            src={image}
+            alt={name}
+            className="max-w-full h-64 object-contain"
+          />
+        </div>
 
-                  <h2 className='uppercase font-bold ' >{name}</h2>
-                  <div className='w-full m-auto flex justify-center'>
-                    <img src={image} alt={name} className='max-w-full w-auto h-64 object-contain'/>
-                  </div> 
+        <div className="w-full md:w-1/2 space-y-2 text-center md:text-left">
+          <h2 className="uppercase font-bold text-lg mb-10">{name}</h2>
+          <p className="text-sm mb-5">{description}</p>
+          <p className="text-md font-medium mb-5 text-green-600">Precio: ${price}</p>
+          <p className="text-sm">Unidades disponibles: {stock}</p>
+          <button
+            onClick={handleAddToCart}
+            className="mt-4 py-2 px-4 rounded-xl font-medium bg-blue-500 text-white hover:bg-blue-600 transition-colors"
+          >
+            Comprar
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
 
-                  <p className='text-sm'>{description}</p>
-                  <p className='text-sm'>Precio: ${price}</p>
-                  <p className='text-sm'>Unidades disponibles: {stock}</p>
-                  <button onClick={handleAddToCart} className="py-2 px-2 rounded-xl font-medium transition-colors duration-200 w-30 bg-blue-300 text-white hover:bg-blue-400" >Comprar</button>
-              </div>
-          </div>
-      
-    </>
-  );
-};
 
 export default ProductDetail
