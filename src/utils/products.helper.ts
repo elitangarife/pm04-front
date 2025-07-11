@@ -2,14 +2,18 @@ import { IProduct } from "."
 
 const APIURL = process.env.NEXT_PUBLIC_API_URL
 
-export async function fetchProducts () {
+export async function fetchProducts (): Promise<IProduct[]> {
     try {
         const data = await fetch(`${APIURL}/products`)
+
+        if(!data.ok) {
+            return []
+        }
         const products: IProduct[] = await data.json()
         return products
 
     } catch (error: any) {
-        throw new Error(error)
+        return []
     }
 }
 
